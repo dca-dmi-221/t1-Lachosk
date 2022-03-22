@@ -13,11 +13,11 @@ function setup() {
 
 function draw() {
   reproductor.pintarBoton();
+  reproductor.botonSonido();
 }
 
 
-function mousePressed() {
-  
-  reproductor.hizoClick();
-  reproductor.noClick();
+function mousePressed() { 
+  reproductor.hizoClickPLay();
+  reproductor.hizoClickVolumen()
 }
