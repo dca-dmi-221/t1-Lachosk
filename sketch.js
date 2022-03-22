@@ -16,7 +16,8 @@ function draw() {
 }
 
 
-function mouseClicked() {
+function mousePressed() {
+  
   reproductor.hizoClick();
   reproductor.noClick();
 }

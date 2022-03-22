@@ -43,26 +43,12 @@ class Reproductor {
             fill(0, 255, 0, 63);
             this.sobreBola = false;
         }
-
-
-
-
-
-
-
-
-
-
-
-
         fill(this.r, this.g, this.b);
-        
         circle(this.posX, this.posY, this.radio)
-
     }
 
     hizoClick() {
-        if (this.sobreBola && this.cancion.isPlaying()) {
+        if (this.cancion.isPlaying()&&this.sobreBola) {
             this.bloqueada = false;
             this.cancion.pause();
             this.r = 255;
