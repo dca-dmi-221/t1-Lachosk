@@ -21,6 +21,9 @@ class Reproductor {
         this.xOffset = 0, 0
         this.yOffset = 0, 0
 
+        this.xOffset2 = 0, 0
+        this.yOffset2 = 0, 0
+
         this.sobreBola = false;
         this.bloqueada = false;
 
@@ -85,29 +88,20 @@ class Reproductor {
 
 
     hizoClickVolumen() {
-        this.cancion.setVolume(this.volumen)
-        this.volumen += 0.1
-        if (this.sobreBola2) {
-            if (this.cancion.isPlaying()) {
-                this.cancion.pause();
-                this.r = 255;
-                this.g = 0;
-            } else {
-                this.cancion.play();
-                this.g = 255;
-                this.r = 0;
-            }
-            this.xOffset = mouseX - this.posX;
-            this.yOffset = mouseY - this.posY;
+        if (this.sobreBola2&&this.cancion) {
+            this.cancion.setVolume(this.volumen)
+            this.volumen += 0.1
         }
+        this.xOffset2 = mouseX - this.posXV;
+        this.yOffset2 = mouseY - this.posYV;
     }
 
 
 
     hizoClickPLay() {
-
         if (this.sobreBola) {
             if (this.cancion.isPlaying()) {
+                this.cancion.setVolume(this.volumen)
                 this.cancion.pause();
                 this.r = 255;
                 this.g = 0;
@@ -118,7 +112,10 @@ class Reproductor {
             }
             this.xOffset = mouseX - this.posX;
             this.yOffset = mouseY - this.posY;
+    
         }
     }
 
 }
+
+
