@@ -1,10 +1,12 @@
-class Boton extends Reproductor{
+class Boton extends Reproductor {
     constructor() {
         super()
+        this.canciones;
+        this.index = 0;
     }
 
     cargarCancion() {
-        this.cancion = loadSound('./canciones/Bound_2.mp3')
+        this.cancion = this.canciones[this.index];
         this.cancion.setVolume(this.volumen)
     }
 
@@ -13,6 +15,7 @@ class Boton extends Reproductor{
         this.pintarBoton();
         this.botonVolumenMas();
         this.botonVolumenMenos();
+        this.botonSiguiente();
     }
 
     pintarBoton() {
@@ -86,11 +89,39 @@ class Boton extends Reproductor{
         circle(this.posXM, this.posYM, this.radio * 2)
     }
 
+
+
+    botonSiguiente() {
+        this.posXS = 300
+        this.posYS = 300
+        if (
+            mouseX > this.posXS - this.radio &&
+            mouseX < this.posXS + this.radio &&
+            mouseY > this.posYS - this.radio &&
+            mouseY < this.posYS + this.radio
+        ) {
+            this.sobreBola4 = true;
+            if (!this.bloqueada4) {
+                stroke(255);
+                fill(0, 255, 0);
+                
+            }
+        } else {
+            stroke(156, 39, 176);
+            fill(0, 255, 0, 63);
+            this.sobreBola4 = false;
+        }
+        fill(155);
+        circle(this.posXS, this.posYS, this.radio * 2)
+    }
+
+
     //Recoge las interacciones de click en un solo metodo
     interaccionClick() {
         this.hizoClickPLay()
         this.hizoClickVolumenMas()
         this.hizoClickVolumenMenos()
+        this.hizoClickSiguiente()
     }
 
     hizoClickPLay() {
@@ -137,5 +168,19 @@ class Boton extends Reproductor{
         this.xOffset3 = mouseX - this.posXM;
         this.yOffset3 = mouseY - this.posYM;
     }
+
+
+    hizoClickSiguiente() {
+        if (this.sobreBola4 && this.cancion) {
+        this.cancion.stop()
+           this.index++
+           this.cargarCancion()
+           this.cancion.play()
+        }
+        this.xOffset4 = mouseX - this.posXS;
+        this.yOffset4 = mouseY - this.posYS;
+    }
+
+
 
 }

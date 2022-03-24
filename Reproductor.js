@@ -17,6 +17,8 @@ class Reproductor {
         this.posXM;
         this.posYM;
 
+        this.posXS
+        this.posYS
 
         this.radio = 50;
 
@@ -26,8 +28,11 @@ class Reproductor {
         this.xOffset2 = 0, 0
         this.yOffset2 = 0,
 
-            this.xOffset3 = 0, 0
+        this.xOffset3 = 0, 0
         this.yOffset3 = 0, 0
+
+        this.xOffset4 = 0, 0
+        this.yOffset4 = 0, 0
 
         this.sobreBola = false;
         this.bloqueada = false;
@@ -37,5 +42,13 @@ class Reproductor {
 
         this.sobreBola3 = false;
         this.bloqueada3 = false;
+ 
+        this.sobreBola4 = false;
+        this.bloqueada4 = false;
+ 
+ 
+ 
+ 
+ 
     }
 }
