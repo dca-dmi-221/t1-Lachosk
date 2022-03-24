@@ -1,5 +1,6 @@
 interfaz = new Interfaz;
 reproductor = new Reproductor;
+boton = new Boton;
 
 function preload() {
   interfaz.cargarImagen();
@@ -8,16 +9,14 @@ function preload() {
 function setup() {
   createCanvas(1366, 799);
   interfaz.pintarImagen();
-  reproductor.cargarCancion();
+  boton.cargarCancion();
 }
 
 function draw() {
-  reproductor.pintarBoton();
-  reproductor.botonSonido();
+  boton.botones();
 }
 
 
-function mousePressed() { 
-  reproductor.hizoClickPLay();
-  reproductor.hizoClickVolumen()
+function mousePressed() {
+  boton.interaccionClick()
 }
