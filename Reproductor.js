@@ -1,5 +1,6 @@
 class Reproductor {
     constructor() {
+        this.miSonido = []
         this.cancion;
         this.volumen = 0.2;
 
@@ -25,7 +26,7 @@ class Reproductor {
         this.xOffset2 = 0, 0
         this.yOffset2 = 0,
 
-        this.xOffset3 = 0, 0
+            this.xOffset3 = 0, 0
         this.yOffset3 = 0, 0
 
         this.sobreBola = false;

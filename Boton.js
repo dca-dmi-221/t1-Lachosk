@@ -1,10 +1,11 @@
-class Boton extends Reproductor {
+class Boton extends Reproductor{
     constructor() {
         super()
     }
-    
+
     cargarCancion() {
-        this.cancion = loadSound('Bound_2.mp3')
+        this.cancion = loadSound('./canciones/Bound_2.mp3')
+        this.cancion.setVolume(this.volumen)
     }
 
     //Recoge los metodos de pintar en un solo metodo
@@ -95,7 +96,7 @@ class Boton extends Reproductor {
     hizoClickPLay() {
         if (this.sobreBola) {
             if (this.cancion.isPlaying()) {
-                this.cancion.setVolume(this.volumen)
+                // this.cancion.setVolume(this.volumen)
                 this.volumen = 0.2;
                 this.cancion.pause();
                 this.r = 255;
