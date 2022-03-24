@@ -2,11 +2,10 @@ class Boton extends Reproductor {
     constructor() {
         super()
     }
-
+    
     cargarCancion() {
         this.cancion = loadSound('Bound_2.mp3')
     }
-
 
     //Recoge los metodos de pintar en un solo metodo
     botones() {
@@ -14,7 +13,6 @@ class Boton extends Reproductor {
         this.botonVolumenMas();
         this.botonVolumenMenos();
     }
-
 
     pintarBoton() {
         this.posX = width / 2.0
@@ -62,9 +60,6 @@ class Boton extends Reproductor {
         fill(150);
         circle(this.posXV, this.posYV, this.radio * 2)
     }
-
-
-
 
     botonVolumenMenos() {
         this.posXM = 200
@@ -141,7 +136,5 @@ class Boton extends Reproductor {
         this.xOffset3 = mouseX - this.posXM;
         this.yOffset3 = mouseY - this.posYM;
     }
-
-
 
 }
