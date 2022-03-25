@@ -20,6 +20,9 @@ class Reproductor {
         this.posXS
         this.posYS
 
+        this.posXA
+        this.posYA
+
         this.radio = 50;
 
         this.xOffset = 0, 0
@@ -34,6 +37,9 @@ class Reproductor {
         this.xOffset4 = 0, 0
         this.yOffset4 = 0, 0
 
+        this.xOffset5 = 0, 0
+        this.yOffset5 = 0, 0
+
         this.sobreBola = false;
         this.bloqueada = false;
 
@@ -45,10 +51,10 @@ class Reproductor {
  
         this.sobreBola4 = false;
         this.bloqueada4 = false;
- 
- 
- 
- 
- 
+
+        this.sobreBola5 = false;
+        this.bloqueada5 = false;
+
+
     }
 }

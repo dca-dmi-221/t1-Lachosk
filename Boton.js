@@ -16,6 +16,7 @@ class Boton extends Reproductor {
         this.botonVolumenMas();
         this.botonVolumenMenos();
         this.botonSiguiente();
+        this.botonAtras();
     }
 
     pintarBoton() {
@@ -89,8 +90,6 @@ class Boton extends Reproductor {
         circle(this.posXM, this.posYM, this.radio * 2)
     }
 
-
-
     botonSiguiente() {
         this.posXS = 300
         this.posYS = 300
@@ -104,7 +103,7 @@ class Boton extends Reproductor {
             if (!this.bloqueada4) {
                 stroke(255);
                 fill(0, 255, 0);
-                
+
             }
         } else {
             stroke(156, 39, 176);
@@ -115,6 +114,29 @@ class Boton extends Reproductor {
         circle(this.posXS, this.posYS, this.radio * 2)
     }
 
+    botonAtras() {
+        this.posXA = 100
+        this.posYA = 300
+        if (
+            mouseX > this.posXA - this.radio &&
+            mouseX < this.posXA + this.radio &&
+            mouseY > this.posYA - this.radio &&
+            mouseY < this.posYA + this.radio
+        ) {
+            this.sobreBola5 = true;
+            if (!this.bloqueada5) {
+                stroke(255);
+                fill(0, 255, 0);
+
+            }
+        } else {
+            stroke(156, 39, 176);
+            fill(0, 255, 0, 63);
+            this.sobreBola5 = false;
+        }
+        fill(155);
+        circle(this.posXA, this.posYA, this.radio * 2)
+    }
 
     //Recoge las interacciones de click en un solo metodo
     interaccionClick() {
@@ -122,6 +144,7 @@ class Boton extends Reproductor {
         this.hizoClickVolumenMas()
         this.hizoClickVolumenMenos()
         this.hizoClickSiguiente()
+        this.hizoClickAtras()
     }
 
     hizoClickPLay() {
@@ -172,15 +195,32 @@ class Boton extends Reproductor {
 
     hizoClickSiguiente() {
         if (this.sobreBola4 && this.cancion) {
-        this.cancion.stop()
-           this.index++
-           this.cargarCancion()
-           this.cancion.play()
+            this.cancion.stop()
+            this.index++
+            this.cargarCancion()
+            this.cancion.play()
+        }
+        if (this.index >= 2) {
+            this.index = [0];
         }
         this.xOffset4 = mouseX - this.posXS;
         this.yOffset4 = mouseY - this.posYS;
     }
 
 
+    hizoClickAtras() {
+        if (this.sobreBola5 && this.cancion) {
+            this.cancion.stop()
+            this.index--
+            this.cargarCancion()
+            this.cancion.play()
+        }
+
+        /* if (this.index <= 0) {
+             this.index = 3;
+         }*/
+        this.xOffset5 = mouseX - this.posXA;
+        this.yOffset5 = mouseY - this.posYA;
+    }
 
 }
