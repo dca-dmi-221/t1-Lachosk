@@ -5,6 +5,7 @@ class Boton extends Reproductor {
         this.index = 0;
     }
 
+    //Carga las canciones
     cargarCancion() {
         this.cancion = this.canciones[this.index];
         this.cancion.setVolume(this.volumen)
@@ -19,6 +20,7 @@ class Boton extends Reproductor {
         this.botonAtras();
     }
 
+    //Funciones de los botones
     pintarBoton() {
         this.posX = width / 2.0
         this.posY = height / 2.0
@@ -147,6 +149,7 @@ class Boton extends Reproductor {
         this.hizoClickAtras()
     }
 
+    //Funciones para dar click
     hizoClickPLay() {
         if (this.sobreBola) {
             if (this.cancion.isPlaying()) {
@@ -201,12 +204,15 @@ class Boton extends Reproductor {
             this.cancion.play()
         }
         if (this.index >= 2) {
-            this.index = [0];
+            //this.cancion.stop()
+            this.index = 0
         }
         this.xOffset4 = mouseX - this.posXS;
         this.yOffset4 = mouseY - this.posYS;
+        console.log(this.index + "😳")
+        /// this.index;
+        
     }
-
 
     hizoClickAtras() {
         if (this.sobreBola5 && this.cancion) {
@@ -215,10 +221,10 @@ class Boton extends Reproductor {
             this.cargarCancion()
             this.cancion.play()
         }
-
-        /* if (this.index <= 0) {
-             this.index = 3;
-         }*/
+        if (this.index <= 0) {
+            //this.cancion.stop()
+            this.index = 0
+        }
         this.xOffset5 = mouseX - this.posXA;
         this.yOffset5 = mouseY - this.posYA;
     }

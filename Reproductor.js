@@ -1,6 +1,7 @@
 class Reproductor {
     constructor() {
         this.miSonido = []
+
         this.cancion;
         this.volumen = 0.2;
 
@@ -48,13 +49,11 @@ class Reproductor {
 
         this.sobreBola3 = false;
         this.bloqueada3 = false;
- 
+
         this.sobreBola4 = false;
         this.bloqueada4 = false;
 
         this.sobreBola5 = false;
         this.bloqueada5 = false;
-
-
     }
 }
