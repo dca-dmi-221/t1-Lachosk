@@ -1,6 +1,7 @@
 class Boton extends Reproductor {
-    constructor() {
-        super()
+    constructor(songsNumber) {
+        super();
+        this.songsNumber= songsNumber; 
         this.canciones;
         this.index = 0;
     }
@@ -198,35 +199,46 @@ class Boton extends Reproductor {
 
     hizoClickSiguiente() {
         if (this.sobreBola4 && this.cancion) {
-            this.cancion.stop()
-            this.index++
-            this.cargarCancion()
-            this.cancion.play()
+            if(this.index + 1 < this.songsNumber){
+                
+                this.cancion.stop()
+                this.index++
+                this.cargarCancion();
+                this.cancion.play()
+                this.xOffset4 = mouseX - this.posXS;
+                this.yOffset4 = mouseY - this.posYS;
+            }else{
+                this.cancion.stop();
+                this.index = 0;
+                this.cargarCancion();
+                this.cancion.play();
+            }
         }
-        if (this.index >= 2) {
-            //this.cancion.stop()
-            this.index = 0
-        }
-        this.xOffset4 = mouseX - this.posXS;
-        this.yOffset4 = mouseY - this.posYS;
-        console.log(this.index + "😳")
         /// this.index;
-        
+      
     }
 
     hizoClickAtras() {
         if (this.sobreBola5 && this.cancion) {
-            this.cancion.stop()
-            this.index--
-            this.cargarCancion()
-            this.cancion.play()
+            if(this.index != 0){
+
+                console.log("restando ando");
+                this.cancion.stop()
+                this.index--
+                this.cargarCancion();
+                this.cancion.play()
+                this.xOffset5 = mouseX - this.posXA;
+                this.yOffset5 = mouseY - this.posYA;
+            }else{
+                this.cancion.stop();
+                this.index = 2;
+                this.cargarCancion();
+                this.cancion.play();
+                console.log("xd");
+            }
+        
+            console.log(this.index + "😳")
         }
-        if (this.index <= 0) {
-            //this.cancion.stop()
-            this.index = 0
-        }
-        this.xOffset5 = mouseX - this.posXA;
-        this.yOffset5 = mouseY - this.posYA;
     }
 
 }

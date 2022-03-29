@@ -1,6 +1,6 @@
 interfaz = new Interfaz;
 reproductor = new Reproductor;
-boton = new Boton;
+let boton;
 
 function preload() {
   interfaz.cargarImagen();
@@ -9,6 +9,7 @@ function preload() {
     loadSound("./canciones/Cancion2.mp3"),
     loadSound("./canciones/Cancion3.mp3")
   ];
+  boton = new Boton(canciones.length)
   boton.canciones = canciones;
 }
 
