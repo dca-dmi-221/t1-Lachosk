@@ -19,6 +19,13 @@ class Boton extends Reproductor {
         this.botonVolumenMenos();
         this.botonSiguiente();
         this.botonAtras();
+        this.pintarVolumen();
+    }
+
+
+    pintarVolumen(){
+        fill(0)
+        text(this.volumen,893,650)
     }
 
     //Funciones de los botones
@@ -41,8 +48,8 @@ class Boton extends Reproductor {
     }
 
     botonVolumenMas() {
-        this.posXV = 200
-        this.posYV = 200
+        this.posXV = 785
+        this.posYV = 650
 
         if (
             mouseX > this.posXV - this.radio &&
@@ -60,8 +67,8 @@ class Boton extends Reproductor {
     }
 
     botonVolumenMenos() {
-        this.posXM = 200
-        this.posYM = 400
+        this.posXM = 492
+        this.posYM = 650
 
         if (
             mouseX > this.posXM - this.radio &&

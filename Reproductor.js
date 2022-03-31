@@ -56,4 +56,8 @@ class Reproductor {
         this.sobreBola5 = false;
         this.bloqueada5 = false;
     }
+
+
+
+  
 }
