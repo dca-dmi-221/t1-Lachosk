@@ -10,6 +10,11 @@ class Sonido extends Reproductor {
         this.verificar = false;
     }
 
+
+    infoCanciones(){
+        
+    }
+
     cargarCancion() {
         this.miSonido = [
             loadSound('./canciones/Cancion1'),
@@ -37,9 +42,5 @@ class Sonido extends Reproductor {
             this.miSonido[this.cancionActual].stop();
             this.cancionActual = 0;
         }
-
-
-
     }
-
 }

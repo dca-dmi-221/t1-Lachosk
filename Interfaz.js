@@ -4,7 +4,7 @@ class Interfaz {
     }
 
     cargarImagen() {
-        this.img = loadImage('1366_2000.png');
+        this.img = loadImage('./interfaces/Frame 4.png');
     }
 
     pintarImagen() {

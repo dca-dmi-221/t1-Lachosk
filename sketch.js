@@ -14,7 +14,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1366, 799);
+  createCanvas(1280, 720);
   interfaz.pintarImagen();
   boton.cargarCancion();
 }
@@ -25,4 +25,5 @@ function draw() {
 
 function mousePressed() {
   boton.interaccionClick()
+  console.log(mouseX,mouseY);
 }

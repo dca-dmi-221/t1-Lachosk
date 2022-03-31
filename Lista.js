@@ -1,3 +1,3 @@
-class Lista extends Reproductor {
+class Lista {
     constructor() {}
 }

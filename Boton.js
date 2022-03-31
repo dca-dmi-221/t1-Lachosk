@@ -1,19 +1,19 @@
 class Boton extends Reproductor {
     constructor(songsNumber) {
         super();
-        this.songsNumber= songsNumber; 
+        this.songsNumber = songsNumber;
         this.canciones;
         this.index = 0;
     }
-
     //Carga las canciones
     cargarCancion() {
         this.cancion = this.canciones[this.index];
         this.cancion.setVolume(this.volumen)
     }
-
     //Recoge los metodos de pintar en un solo metodo
     botones() {
+        noFill();
+        //noStroke();
         this.pintarBoton();
         this.botonVolumenMas();
         this.botonVolumenMenos();
@@ -23,8 +23,8 @@ class Boton extends Reproductor {
 
     //Funciones de los botones
     pintarBoton() {
-        this.posX = width / 2.0
-        this.posY = height / 2.0
+        this.posX = 641
+        this.posY = 650
         if (
             mouseX > this.posX - this.radio &&
             mouseX < this.posX + this.radio &&
@@ -33,15 +33,10 @@ class Boton extends Reproductor {
         ) {
             this.sobreBola = true;
             if (!this.bloqueada) {
-                stroke(255);
-                fill(0, 255, 0);
             }
         } else {
-            stroke(156, 39, 176);
-            fill(0, 255, 0, 63);
             this.sobreBola = false;
         }
-        fill(this.r, this.g, this.b);
         circle(this.posX, this.posY, this.radio * 2)
     }
 
@@ -57,15 +52,10 @@ class Boton extends Reproductor {
         ) {
             this.sobreBola2 = true;
             if (!this.bloqueada2) {
-                stroke(255);
-                fill(0, 255, 0);
             }
         } else {
-            stroke(156, 39, 176);
-            fill(0, 255, 0, 63);
             this.sobreBola2 = false;
         }
-        fill(150);
         circle(this.posXV, this.posYV, this.radio * 2)
     }
 
@@ -81,21 +71,16 @@ class Boton extends Reproductor {
         ) {
             this.sobreBola3 = true;
             if (!this.bloqueada3) {
-                stroke(255);
-                fill(0, 255, 0);
             }
         } else {
-            stroke(156, 39, 176);
-            fill(0, 255, 0, 63);
             this.sobreBola3 = false;
         }
-        fill(150);
         circle(this.posXM, this.posYM, this.radio * 2)
     }
 
     botonSiguiente() {
-        this.posXS = 300
-        this.posYS = 300
+        this.posXS = 710
+        this.posYS = 650
         if (
             mouseX > this.posXS - this.radio &&
             mouseX < this.posXS + this.radio &&
@@ -104,22 +89,16 @@ class Boton extends Reproductor {
         ) {
             this.sobreBola4 = true;
             if (!this.bloqueada4) {
-                stroke(255);
-                fill(0, 255, 0);
-
             }
         } else {
-            stroke(156, 39, 176);
-            fill(0, 255, 0, 63);
             this.sobreBola4 = false;
         }
-        fill(155);
         circle(this.posXS, this.posYS, this.radio * 2)
     }
 
     botonAtras() {
-        this.posXA = 100
-        this.posYA = 300
+        this.posXA = 568
+        this.posYA = 650
         if (
             mouseX > this.posXA - this.radio &&
             mouseX < this.posXA + this.radio &&
@@ -128,16 +107,10 @@ class Boton extends Reproductor {
         ) {
             this.sobreBola5 = true;
             if (!this.bloqueada5) {
-                stroke(255);
-                fill(0, 255, 0);
-
             }
         } else {
-            stroke(156, 39, 176);
-            fill(0, 255, 0, 63);
             this.sobreBola5 = false;
         }
-        fill(155);
         circle(this.posXA, this.posYA, this.radio * 2)
     }
 
@@ -154,7 +127,6 @@ class Boton extends Reproductor {
     hizoClickPLay() {
         if (this.sobreBola) {
             if (this.cancion.isPlaying()) {
-                // this.cancion.setVolume(this.volumen)
                 this.volumen = 0.2;
                 this.cancion.pause();
                 this.r = 255;
@@ -199,29 +171,25 @@ class Boton extends Reproductor {
 
     hizoClickSiguiente() {
         if (this.sobreBola4 && this.cancion) {
-            if(this.index + 1 < this.songsNumber){
-                
+            if (this.index + 1 < this.songsNumber) {
                 this.cancion.stop()
                 this.index++
                 this.cargarCancion();
                 this.cancion.play()
                 this.xOffset4 = mouseX - this.posXS;
                 this.yOffset4 = mouseY - this.posYS;
-            }else{
+            } else {
                 this.cancion.stop();
                 this.index = 0;
                 this.cargarCancion();
                 this.cancion.play();
             }
         }
-        /// this.index;
-      
     }
 
     hizoClickAtras() {
         if (this.sobreBola5 && this.cancion) {
-            if(this.index != 0){
-
+            if (this.index != 0) {
                 console.log("restando ando");
                 this.cancion.stop()
                 this.index--
@@ -229,16 +197,12 @@ class Boton extends Reproductor {
                 this.cancion.play()
                 this.xOffset5 = mouseX - this.posXA;
                 this.yOffset5 = mouseY - this.posYA;
-            }else{
+            } else {
                 this.cancion.stop();
                 this.index = 2;
                 this.cargarCancion();
                 this.cancion.play();
-                console.log("xd");
             }
-        
-            console.log(this.index + "😳")
         }
     }
-
 }

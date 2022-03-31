@@ -24,7 +24,7 @@ class Reproductor {
         this.posXA
         this.posYA
 
-        this.radio = 50;
+        this.radio = 20;
 
         this.xOffset = 0, 0
         this.yOffset = 0, 0
@@ -32,7 +32,7 @@ class Reproductor {
         this.xOffset2 = 0, 0
         this.yOffset2 = 0,
 
-        this.xOffset3 = 0, 0
+            this.xOffset3 = 0, 0
         this.yOffset3 = 0, 0
 
         this.xOffset4 = 0, 0

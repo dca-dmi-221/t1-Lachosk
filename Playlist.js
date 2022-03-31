@@ -1,5 +1,4 @@
-class Playlist extends Reproductor {
-    constructor(){
-        
-    }
+class Playlist {
+    
+    
 }
